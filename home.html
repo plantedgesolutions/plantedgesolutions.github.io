@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlantEdge Operations & Engineering</title>
+  <meta name="description" content="PlantEdge Operations & Engineering – Manufacturing, Engineering & Operations Consulting" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0f2a44;
+      --secondary: #1f6f8b;
+      --accent: #e8b34b;
+      --light: #f4f6f8;
+      --dark: #0b1c2d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 90px 10%;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+
+    .stats {
+      background: var(--primary);
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    .contact {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      text-align: center;
+    }
+
+    .contact a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      background: var(--accent);
+      color: var(--dark);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: background 0.3s ease;
+    }
+
+    .contact a:hover {
+      background: #d9a437;
+    }
+
+    footer {
+      background: #071423;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PlantEdge Operations & Engineering</h1>
+  <p>Engineering Practicality. Operational Excellence.</p>
+</header>
+
+<section>
+  <h2 class="section-title">Who We Are</h2>
+  <div class="about">
+    <div class="card">
+      <p>
+        PlantEdge Operations & Engineering is a manufacturing consulting firm focused on
+        solving complex plant-level challenges. We partner with organizations to design,
+        stabilize, optimize, and scale manufacturing operations.
+      </p>
+    </div>
+    <div class="card">
+      <p>
+        Our strength lies in hands-on execution — from greenfield plant setup and
+        brownfield expansion to operational turnaround, reliability improvement,
+        energy optimization, and digital enablement.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Manufacturing Excellence</h3><p>OEE improvement, Lean Six Sigma, productivity enhancement, cost reduction.</p></div>
+    <div class="card"><h3>Engineering & Maintenance</h3><p>Asset reliability, TPM, CBM, RCA, precision maintenance, lifecycle management.</p></div>
+    <div class="card"><h3>Greenfield & Brownfield Projects</h3><p>Plant setup, capacity expansion, utilities design, project execution.</p></div>
+    <div class="card"><h3>Utilities, Energy & ESG</h3><p>HVAC, power, water, ETP/STP, energy audits, statutory compliance.</p></div>
+    <div class="card"><h3>Automation & Digital Factory</h3><p>Low-cost automation, Industry 4.0 readiness, SCADA, BMS, digital dashboards.</p></div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="stat"><h2>24+</h2><p>Years Experience</p></div>
+  <div class="stat"><h2>5+</h2><p>Greenfield Plants</p></div>
+  <div class="stat"><h2>20%+</h2><p>OEE Improvement</p></div>
+  <div class="stat"><h2>₹40L+</h2><p>Annual Cost Savings</p></div>
+</section>
+
+<section class="contact">
+  <h2 class="section-title" style="color:white">Let’s Build Better Operations</h2>
+  <p>Reach out to discuss how we can improve your plant performance.</p>
+  <a href="mailto:plantedge.consulting@gmail.com">Contact Us</a>
+</section>
+
+<footer>
+  © 2026 PlantEdge Operations & Engineering | All Rights Reserved
+</footer>
+
+</body>
+</html>
