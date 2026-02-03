@@ -7,7 +7,7 @@
   <meta name="description" content="PlantEdge Operations & Engineering – Manufacturing, Engineering & Operations Consulting" />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -16,183 +16,179 @@
       --accent: #e8b34b;
       --light: #f4f6f8;
       --dark: #0b1c2d;
+      --gray: #6b7280;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+
+    body { background: var(--light); color: var(--dark); line-height: 1.7; scroll-behavior: smooth; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; width: 100%; z-index: 1000;
+      background: rgba(15,42,68,0.95);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 10%; color: white;
     }
 
-    body {
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
+    nav span { font-weight: 700; letter-spacing: 0.5px; }
+    nav a { color: white; margin-left: 25px; text-decoration: none; font-size: 0.9rem; opacity: 0.9; }
+    nav a:hover { opacity: 1; }
 
+    /* HERO */
     header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(15,42,68,0.95), rgba(31,111,139,0.9)), url('https://images.unsplash.com/photo-1581092160613-1c5c8b53a5ad?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover; background-position: center;
       color: white;
-      padding: 90px 10%;
-      text-align: center;
+      display: flex; align-items: center;
+      padding: 0 10%;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
+    .hero-content { max-width: 650px; animation: fadeInUp 1.2s ease; }
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+    header h1 { font-size: 3.2rem; margin-bottom: 15px; }
+    header p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 30px; }
 
-    section {
-      padding: 70px 10%;
-    }
-
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-      color: var(--primary);
-      text-align: center;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      align-items: center;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    .btn {
+      display: inline-block; padding: 14px 32px;
+      background: var(--accent); color: var(--dark);
+      border-radius: 30px; text-decoration: none; font-weight: 600;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    section { padding: 90px 10%; }
+
+    .section-title { text-align: center; font-size: 2.4rem; margin-bottom: 50px; color: var(--primary); }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 40px; }
+
+    /* CARDS */
+    .card {
+      background: white; padding: 35px; border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
     }
+    .card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+    .card h3 { color: var(--secondary); margin-bottom: 15px; }
+    .card p { color: var(--gray); font-size: 0.95rem; }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
+    /* SERVICES */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 30px; }
 
-    .card h3 {
-      margin-bottom: 15px;
-      color: var(--secondary);
-    }
+    /* TIMELINE */
+    .timeline { max-width: 900px; margin: auto; }
+    .step { display: flex; gap: 20px; margin-bottom: 30px; }
+    .step span { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
 
+    /* STATS */
     .stats {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      text-align: center;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      text-align: center; gap: 30px;
     }
+    .stat h2 { font-size: 2.6rem; color: var(--accent); }
+    .stat p { font-size: 0.9rem; opacity: 0.9; }
 
-    .stat h2 {
-      font-size: 2.5rem;
-      color: var(--accent);
-    }
-
+    /* CONTACT */
     .contact {
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      color: white;
-      text-align: center;
+      background: var(--dark); color: white; text-align: center;
     }
 
-    .contact a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 30px;
-      background: var(--accent);
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 30px;
-      transition: background 0.3s ease;
-    }
+    footer { background: #050f1a; color: #aaa; text-align: center; padding: 25px; font-size: 0.85rem; }
 
-    .contact a:hover {
-      background: #d9a437;
-    }
-
-    footer {
-      background: #071423;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
+      header h1 { font-size: 2.3rem; }
+      nav { padding: 14px 6%; }
+      section { padding: 70px 6%; }
     }
   </style>
 </head>
 <body>
 
+<nav>
+  <span>PlantEdge</span>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#approach">Approach</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <header>
-  <h1>PlantEdge Operations & Engineering</h1>
-  <p>Engineering Practicality. Operational Excellence.</p>
+  <div class="hero-content">
+    <h1>Engineering Practicality.<br>Operational Excellence.</h1>
+    <p>We help manufacturing organizations design, stabilize, optimize and scale world-class operations.</p>
+    <a href="#contact" class="btn">Start a Conversation</a>
+  </div>
 </header>
 
-<section>
+<section id="about">
   <h2 class="section-title">Who We Are</h2>
   <div class="about">
     <div class="card">
-      <p>
-        PlantEdge Operations & Engineering is a manufacturing consulting firm focused on
-        solving complex plant-level challenges. We partner with organizations to design,
-        stabilize, optimize, and scale manufacturing operations.
-      </p>
+      <h3>Manufacturing-Focused Consulting</h3>
+      <p>PlantEdge Operations & Engineering is a specialist consulting firm focused on solving real plant-level challenges across manufacturing, engineering and operations.</p>
     </div>
     <div class="card">
-      <p>
-        Our strength lies in hands-on execution — from greenfield plant setup and
-        brownfield expansion to operational turnaround, reliability improvement,
-        energy optimization, and digital enablement.
-      </p>
+      <h3>Hands-On Execution</h3>
+      <p>Our solutions are built on decades of shop-floor leadership experience — from greenfield plant setup to turnaround of underperforming factories.</p>
+    </div>
+    <div class="card">
+      <h3>Results That Sustain</h3>
+      <p>We deliver measurable outcomes in reliability, productivity, cost, safety and compliance — not just recommendations.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h2 class="section-title">Our Services</h2>
+<section id="services">
+  <h2 class="section-title">What We Do</h2>
   <div class="services">
-    <div class="card"><h3>Manufacturing Excellence</h3><p>OEE improvement, Lean Six Sigma, productivity enhancement, cost reduction.</p></div>
-    <div class="card"><h3>Engineering & Maintenance</h3><p>Asset reliability, TPM, CBM, RCA, precision maintenance, lifecycle management.</p></div>
-    <div class="card"><h3>Greenfield & Brownfield Projects</h3><p>Plant setup, capacity expansion, utilities design, project execution.</p></div>
-    <div class="card"><h3>Utilities, Energy & ESG</h3><p>HVAC, power, water, ETP/STP, energy audits, statutory compliance.</p></div>
-    <div class="card"><h3>Automation & Digital Factory</h3><p>Low-cost automation, Industry 4.0 readiness, SCADA, BMS, digital dashboards.</p></div>
+    <div class="card"><h3>Manufacturing Excellence</h3><p>OEE improvement, Lean Six Sigma deployment, productivity enhancement and cost reduction.</p></div>
+    <div class="card"><h3>Engineering & Maintenance</h3><p>Asset reliability strategy, TPM, CBM, RCA, precision maintenance and lifecycle optimization.</p></div>
+    <div class="card"><h3>Greenfield & Brownfield Projects</h3><p>Plant concept, detailed engineering, utilities design, execution and commissioning.</p></div>
+    <div class="card"><h3>Utilities, Energy & ESG</h3><p>HVAC, power, water systems, ETP/STP, energy audits and statutory compliance.</p></div>
+    <div class="card"><h3>Automation & Digital Factory</h3><p>Low-cost automation, Industry 4.0 readiness, SCADA, BMS and digital performance dashboards.</p></div>
+  </div>
+</section>
+
+<section id="approach">
+  <h2 class="section-title">Our Consulting Approach</h2>
+  <div class="timeline">
+    <div class="step"><span>01</span><p>Diagnose plant performance gaps using data, audits and on-site assessment.</p></div>
+    <div class="step"><span>02</span><p>Design practical engineering and operational solutions aligned to business goals.</p></div>
+    <div class="step"><span>03</span><p>Execute with client teams to ensure adoption and sustainability.</p></div>
+    <div class="step"><span>04</span><p>Stabilize, standardize and transfer ownership to internal teams.</p></div>
   </div>
 </section>
 
 <section class="stats">
-  <div class="stat"><h2>24+</h2><p>Years Experience</p></div>
-  <div class="stat"><h2>5+</h2><p>Greenfield Plants</p></div>
-  <div class="stat"><h2>20%+</h2><p>OEE Improvement</p></div>
-  <div class="stat"><h2>₹40L+</h2><p>Annual Cost Savings</p></div>
+  <div class="stat"><h2>24+</h2><p>Years of Manufacturing Experience</p></div>
+  <div class="stat"><h2>5+</h2><p>Greenfield Plants Delivered</p></div>
+  <div class="stat"><h2>20%+</h2><p>Typical OEE Improvement</p></div>
+  <div class="stat"><h2>₹40L+</h2><p>Annual Cost Savings Delivered</p></div>
 </section>
 
-<section class="contact">
-  <h2 class="section-title" style="color:white">Let’s Build Better Operations</h2>
-  <p>Reach out to discuss how we can improve your plant performance.</p>
-  <a href="mailto:plantedge.consulting@gmail.com">Contact Us</a>
+<section id="contact" class="contact">
+  <h2 class="section-title" style="color:white">Let’s Improve Your Operations</h2>
+  <p>Connect with us to discuss how PlantEdge can support your manufacturing goals.</p>
+  <br>
+  <a href="mailto:plantedge.consulting@gmail.com" class="btn">plantedge.consulting@gmail.com</a>
 </section>
 
 <footer>
-  © 2026 PlantEdge Operations & Engineering | All Rights Reserved
+  © 2026 PlantEdge Operations & Engineering. All Rights Reserved.
 </footer>
 
 </body>
